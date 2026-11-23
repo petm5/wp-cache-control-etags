@@ -1,5 +1,5 @@
 TARGET = cache-posts-and-pages.zip
-FILES  = cache-posts-and-pages.php
+FILES  = cache-posts-and-pages.php readme.txt
 
 all: build
 
