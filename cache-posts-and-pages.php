@@ -108,6 +108,16 @@ function cheesecake_get_cached_plugin_hash() {
     return $hash;
 }
 
+add_action( 'update_option_active_plugins', 'cheesecake_clear_plugin_hash_cache' );
+
+add_action( 'upgrader_process_complete', function( $upgrader_object, $options ) {
+    if ( $options['action'] == 'update' ) {
+        if ( $options['type'] == 'plugin' ) {
+            cheesecake_clear_plugin_hash_cache();
+        }
+    }
+}, 10, 2 );
+
 function cheesecake_clear_plugin_hash_cache() {
     delete_transient( 'cheesecake_plugin_hash' );
 }
@@ -206,14 +216,3 @@ function cheesecake_get_menu_state() {
         'block' => $block_menu_items,
     ];
 }
-
-add_action( 'update_option_active_plugins', 'cheesecake_clear_plugin_hash_cache' );
-
-add_action( 'upgrader_process_complete', function( $upgrader_object, $options ) {
-    if ( $options['action'] == 'update' ) {
-        if ( $options['type'] == 'plugin' ) {
-            cheesecake_clear_plugin_hash_cache();
-        }
-    }
-}, 10, 2 );
-
