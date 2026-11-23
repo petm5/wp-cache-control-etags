@@ -26,10 +26,9 @@ add_action('wp', function() {
         return;
     }
 
-    $hash = cheesecake_get_current_state_hash();
+    $semantic_entity_hash = cheesecake_get_semantic_entity_hash();
 
-    // Set weak flag since content may not be byte-for-byte identical
-    $current_etag   = 'W/"' . $hash . '"';
+    $current_etag   = 'W/"' . $semantic_entity_hash . '"';
     $requested_etag = trim($_SERVER['HTTP_IF_NONE_MATCH']??'');
 
     if ($requested_etag === $current_etag) {
@@ -40,7 +39,7 @@ add_action('wp', function() {
     header('ETag: ' . $current_etag);
 });
 
-function cheesecake_get_current_state_hash() {
+function cheesecake_get_semantic_entity_hash() {
     $state = [
         'content'      => (int)get_post_modified_time(),
         'last_comment' => cheesecake_get_date_of_last_comment(),
