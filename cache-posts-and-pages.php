@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name:  Cache Optimization
-Description:  Enables post and page content caching in browsers and CDNs.
-Version:      0.5
-Author:       Peter Marshall
-Author URI:   https://petermarshall.ca
-License:      GPL2
-License URI:  https://www.gnu.org/licenses/gpl-2.0.html
-*/
+ * Plugin Name:  Cache Posts and Pages
+ * Description:  Enables browsers, web servers, and CDNs to cache responses for unmodified content, reducing server bandwidth and think time.
+ * Version:      0.5.1
+ * Author:       Peter Marshall
+ * Author URI:   https://petermarshall.ca
+ * License:      GPL2
+ * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 add_action('wp', function() {
     if (is_admin()) {

@@ -1,5 +1,5 @@
-TARGET = cheesecake-cache-headers.zip
-FILES  = cheesecake-cache-headers.php
+TARGET = cache-posts-and-pages.zip
+FILES  = cache-posts-and-pages.php
 
 all: build
 
