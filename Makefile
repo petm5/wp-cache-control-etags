@@ -1,4 +1,4 @@
-NAME  = cache-posts-and-pages
+NAME  = cache-control-etags
 ENTRY = $(NAME).php
 FILES = $(ENTRY) readme.txt
 
