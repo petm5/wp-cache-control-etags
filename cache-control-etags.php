@@ -20,7 +20,7 @@ add_action('wp', function() {
         return;
     }
 
-    header('Cache-Control: max-age=60');
+    header('Cache-Control: max-age=180');
 
     if ( !is_singular() || post_password_required() ) {
         return;

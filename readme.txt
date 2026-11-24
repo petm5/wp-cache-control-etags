@@ -11,7 +11,7 @@ Combining HTTP cache directives with conditional requests is a powerful way to o
 
 This is not a traditional caching plugin, but it lets you take better advantage of existing standards-compliant caching systems. It enables plug-and-play integration with multi-tier web caches, including drop-in support for global CDNs like Cloudflare, CloudFront, and Fastly.
 
-Pages are marked valid for 1 minute by default and given an `ETag` header, after which they are efficiently refreshed through a `304 Not Modified` response.
+Pages and posts are marked valid for 3 minutes by default, after which they are efficiently refreshed through a `304 Not Modified` response.
 
 Private pages (logged in users, password-protected content, the admin dashboard, etc.) will not be cached.
 
