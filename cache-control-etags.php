@@ -14,7 +14,7 @@ add_action('wp', function() {
         return;
     }
 
-    header('Vary: Cookie, Accept-Encoding');
+    header('Vary: Cookie');
 
     if ( is_user_logged_in() ) {
         header('Cache-Control: private');
