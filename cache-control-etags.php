@@ -16,7 +16,7 @@ add_action('template_redirect', function() {
 
     header('Vary: Cookie');
 
-    if ( is_user_logged_in() ) {
+    if ( is_user_logged_in() || post_password_required() ) {
         header('Cache-Control: private');
         return;
     }
@@ -69,7 +69,6 @@ function cheesecake_get_current_post_state() {
     return [
         'updated'      => (int)get_post_modified_time(),
         'last_comment' => cheesecake_get_date_of_last_comment(),
-        'private'      => post_password_required(),
     ];
 }
 
