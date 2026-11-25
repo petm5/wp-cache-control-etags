@@ -9,7 +9,7 @@
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-add_action('wp', function() {
+add_action('template_redirect', function() {
     if ( is_admin() ) {
         return;
     }
