@@ -2,7 +2,7 @@
 /*
  * Plugin Name:  HTTP Cache Integration
  * Description:  Speed up webpages with HTTP entity tags and cache signals. Zero setup, self-contained, and won't touch your database.
- * Version:      0.5.2
+ * Version:      0.5.3
  * Author:       Peter Marshall
  * Author URI:   https://petermarshall.ca
  * License:      GPL2
