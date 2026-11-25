@@ -10,17 +10,18 @@
  */
 
 add_action('wp', function() {
-    if (is_admin()) {
+    if ( is_admin() ) {
         return;
     }
 
     header('Vary: Cookie, Accept-Encoding');
 
-    if (is_user_logged_in()) {
+    if ( is_user_logged_in() ) {
+        header('Cache-Control: private');
         return;
     }
 
-    header('Cache-Control: max-age=180');
+    header('Cache-Control: public, max-age=180');
 
     if ( !is_singular() || post_password_required() ) {
         return;
